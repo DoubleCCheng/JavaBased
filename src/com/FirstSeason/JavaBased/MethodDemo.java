@@ -1,4 +1,5 @@
 package com.FirstSeason.JavaBased;
+import java.util.Arrays;
 /*
  * 注：
  * 无参带返回值方法：
@@ -23,6 +24,16 @@ public class MethodDemo {
 		//调用无参带返回值的ageMax()方法；
 		int max=mothod.ageMax();
 		System.out.println("学生年龄的最大值为："+max);
+		//调用带参无返回值的calcAvg2()方法；
+		mothod.caleAvg2(98, 86);
+		//调用带参无返回值的printArray()方法；
+		int[] scores= {84,91,78,68};
+		mothod.printArray(scores);
+		//调用带参带返回值calcPrint()方法；
+		int[] scores2= {79,52,98,81};
+		int count=scores2.length;
+		mothod.calcPrint(scores2);
+		System.out.println("共有"+count+"个成绩信息");
 	}
 	//定义无参无返回值的方法
 	public void showMethod() {
@@ -44,5 +55,21 @@ public class MethodDemo {
 			max=max<age[i]?age[i]:max;
 		}
 		return max;
+	}
+	//定义带参无返回值的方法，eg1：计算两门课程考试成绩的平均分
+	public void caleAvg2(int java2,int php2) {
+		double avg2=(java2+php2)/2;
+		System.out.println("两门课程考试成绩平均分为："+avg2);
+	}
+	//eg2:定义一个带参无返回值的方法，实现数组按字符串方式输出；
+	public void printArray(int[] scores) {
+		System.out.println("数组转换字符串输出为："+Arrays.toString(scores));
+	}
+	//定义带参带返回值的方法，eg1:将考试成绩排序并输出，返回成绩的个数
+	//考试成绩为{79,52,98,81}
+	public int calcPrint(int[] scores2) {
+		Arrays.sort(scores2);
+		System.out.println("考试成绩排序并字符串输出为："+Arrays.toString(scores2));
+		return scores2.length;
 	}
 }
